@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
 import { Logo } from './Logo';
 import { Menu, X } from 'lucide-react';
 import type { Page } from '../types';
@@ -29,9 +28,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled, currentPage, navigateT
     setIsMenuOpen(false);
   };
 
+  // Transparent am Seitenanfang; beim Scrollen dezenter dunkler Hintergrund,
+  // damit die weisse Schrift auch ueber hellem Inhalt lesbar bleibt.
+  const contactBtn =
+    'px-5 py-2 min-h-11 rounded-full text-sm font-medium bg-black/30 text-white border border-white/40 hover:bg-black/50 transition-colors';
+
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-white/90 backdrop-blur-md border-zinc-200 ${scrolled || isMenuOpen ? 'py-3' : 'py-4'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || isMenuOpen ? 'bg-black/70 backdrop-blur-md py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <button
             type="button"
@@ -42,12 +46,12 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled, currentPage, navigateT
             <Logo size="md" />
           </button>
 
-          <div className="hidden md:flex items-center gap-8 text-base text-zinc-700 font-medium">
+          <div className="hidden md:flex items-center gap-8 text-base text-white/85 font-medium">
             {navLinks.map(({ page, label }) => (
               <button
                 key={page}
                 onClick={() => navigateTo(page)}
-                className={`min-h-11 hover:text-black transition-colors ${currentPage === page ? 'text-black' : ''}`}
+                className={`min-h-11 hover:text-white transition-colors ${currentPage === page ? 'text-white' : ''}`}
               >
                 {label}
               </button>
@@ -56,14 +60,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled, currentPage, navigateT
 
           <div className="flex items-center gap-2 md:gap-4">
             <div className="hidden md:flex items-center gap-4">
-              <Button variant="secondary" onClick={() => navigateTo('contact')}>
+              <button onClick={() => navigateTo('contact')} className={contactBtn}>
                 Contact
-              </Button>
+              </button>
             </div>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-3 min-h-11 min-w-11 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-900 relative z-50"
+              className="md:hidden p-3 min-h-11 min-w-11 rounded-xl bg-black/30 border border-white/30 text-white relative z-50"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
             >
@@ -75,23 +79,26 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled, currentPage, navigateT
 
       {/* Mobile-Menue */}
       <div className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className="absolute inset-0 bg-white" />
+        <div className="absolute inset-0 bg-[#080808]" />
         <div className="relative h-full flex flex-col pt-32 pb-12 px-6">
           <div className="flex flex-col gap-2">
             {navLinks.map(({ page, label }) => (
               <button
                 key={page}
                 onClick={() => handleNavClick(page)}
-                className={`flex items-center p-4 rounded-2xl text-2xl font-bold transition-colors ${currentPage === page ? 'bg-accent/10 text-accent' : 'text-zinc-900'}`}
+                className={`flex items-center p-4 rounded-2xl text-2xl font-bold transition-colors ${currentPage === page ? 'bg-white/10 text-white' : 'text-white/80'}`}
               >
                 {label}
               </button>
             ))}
           </div>
           <div className="mt-auto">
-            <Button variant="primary" className="w-full py-6 text-xl" onClick={() => handleNavClick('contact')}>
+            <button
+              onClick={() => handleNavClick('contact')}
+              className="w-full py-5 text-xl rounded-full bg-black/40 text-white border border-white/40 hover:bg-black/60 transition-colors"
+            >
               Contact
-            </Button>
+            </button>
           </div>
         </div>
       </div>

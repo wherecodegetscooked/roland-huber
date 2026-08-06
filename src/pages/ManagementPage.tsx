@@ -1,4 +1,5 @@
 import React from 'react';
+import heroShanghai from '../assets/images/hero-shanghai.jpg';
 import rolandHuber from '../assets/images/roland-huber.jpg';
 import raymondLacoste from '../assets/images/raymond-lacoste.jpg';
 import jinmingWang from '../assets/images/jinming-wang.jpg';
@@ -34,42 +35,45 @@ const team = [
 // Management-Seite: Vorstellung des Managementteams.
 export const ManagementPage: React.FC = () => {
   return (
-    <section className="pt-32 pb-24">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-6xl font-bold text-zinc-900 dark:text-white mb-6">
-            The Management
-          </h1>
-          <p className="text-lg text-zinc-600 dark:text-gray-400 max-w-2xl mx-auto">
+    <>
+      {/* Dunkler Hero-Header */}
+      <section className="relative h-[50vh] min-h-[360px] flex items-end">
+        <div className="absolute inset-0">
+          <img src={heroShanghai} alt="Shanghai skyline at night" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/55" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-12 w-full">
+          <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4">The Management</h1>
+          <p className="text-lg text-gray-200 max-w-2xl">
             RKHConsulting&rsquo;s management team has over 80 years of collective experience in
             strategy consulting, specifically in the penetration of new markets.
           </p>
         </div>
+      </section>
 
-        <div className="space-y-16">
-          {team.map((member) => (
+      {/* Team: grosse, eckige Fotos */}
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6 space-y-20">
+          {team.map((member, i) => (
             <div
               key={member.name}
-              className="grid md:grid-cols-[220px_1fr] gap-8 items-start"
+              className="flex flex-col md:flex-row gap-10 items-start"
             >
+              {/* Feste, fuer alle vier identische Bildgroesse; Seite wechselt */}
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover mx-auto md:mx-0 shadow-lg"
+                className={`w-full md:w-80 h-80 shrink-0 object-cover rounded-lg shadow-xl ${i % 2 === 1 ? 'md:order-2' : ''}`}
               />
-              <div>
-                <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                  {member.name}
-                </h2>
-                <p className="text-accent font-medium mb-4">{member.role}</p>
-                <p className="text-zinc-700 dark:text-gray-300 leading-relaxed">
-                  {member.bio}
-                </p>
+              <div className={`flex-1 ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+                <h2 className="text-3xl font-bold text-zinc-900">{member.name}</h2>
+                <p className="text-accent text-lg font-medium mb-5">{member.role}</p>
+                <p className="text-lg text-zinc-700 leading-relaxed">{member.bio}</p>
               </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };

@@ -7,10 +7,15 @@ import { siteConfig } from '../constants';
 // Google Web Fonts, Kontaktformular und SSL bleiben, da zutreffend.
 export const PrivacyPage: React.FC = () => {
   return (
-    <section className="pt-32 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-4xl sm:text-5xl font-bold text-zinc-900 mb-12">Privacy policy</h1>
+    <>
+      <section className="bg-[#080808] pt-36 pb-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white">Privacy policy</h1>
+        </div>
+      </section>
 
+      <section className="py-20">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="space-y-10 text-zinc-700 leading-relaxed">
           <div>
             <p>
@@ -171,6 +176,7 @@ export const PrivacyPage: React.FC = () => {
           <p className="text-sm text-zinc-500">Thalwil, 05.05.2022</p>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };

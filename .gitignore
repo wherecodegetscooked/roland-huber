@@ -8,6 +8,7 @@ dist
 # Cloudflare / Wrangler
 .wrangler
 .tmp-pages-fn
+.dev.vars
 
 # Environment variables
 .env

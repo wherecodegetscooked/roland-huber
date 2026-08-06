@@ -1,8 +1,8 @@
 import React from 'react';
 import { siteConfig } from '../constants';
-import logoBlack from '../assets/images/logo-schwarz.png';
+import logoWhite from '../assets/images/logo-weiss.png';
 
-// Wortmarken-Logo von RKH Consulting (schwarze Variante fuer hellen Hintergrund).
+// Wortmarken-Logo von RKH Consulting (weisse Variante fuer dunkle Navbar/Footer).
 export const Logo: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => {
   const heights = {
     sm: 'h-5',
@@ -13,7 +13,7 @@ export const Logo: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) =
   return (
     <span className={`inline-flex items-center ${heights[size]}`}>
       <img
-        src={logoBlack}
+        src={logoWhite}
         alt={siteConfig.legalName}
         className={`${heights[size]} w-auto block`}
       />

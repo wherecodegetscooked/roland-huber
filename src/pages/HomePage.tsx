@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '../components/Button';
 import type { Page } from '../types';
 import heroShanghai from '../assets/images/hero-shanghai.jpg';
 
@@ -7,7 +6,8 @@ interface HomePageProps {
   navigateTo: (page: Page) => void;
 }
 
-// Startseite: Vollflaechiges Hero mit Shanghai-Skyline und Missions-Karte.
+// Startseite: Vollflaechiges Hero mit Shanghai-Skyline, Missionstext direkt
+// auf dem Bild (linksbuendig, ohne Kasten).
 export const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
   return (
     <section className="relative min-h-screen flex items-center">
@@ -18,23 +18,27 @@ export const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
           alt="Shanghai skyline at night"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        {/* Verlauf von links fuer Lesbarkeit des Textes */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
       </div>
 
-      {/* Missions-Karte */}
+      {/* Missionstext direkt auf dem Bild */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="max-w-xl bg-black/70 backdrop-blur-sm text-white p-8 sm:p-10 rounded-lg shadow-2xl">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Mission</h1>
-          <p className="text-lg leading-relaxed text-gray-100 mb-8">
+        <div className="max-w-2xl text-left text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]">
+          <h1 className="text-5xl sm:text-7xl font-bold mb-8">Mission</h1>
+          <p className="text-xl sm:text-2xl leading-relaxed mb-10">
             Bridging the gap between growth-seeking Chinese technology companies and
             clients in Africa, the Middle East and Europe. RKHC achieves this in
             collaboration with its local partners in the respective markets by building
             up a local presence and successfully implement growth strategies for the
             Chinese technology companies.
           </p>
-          <Button variant="primary" onClick={() => navigateTo('about')} className="px-6 py-3 text-base">
+          <button
+            onClick={() => navigateTo('about')}
+            className="px-7 py-3 rounded-full text-base font-medium bg-black/30 text-white border border-white/40 hover:bg-black/50 transition-colors"
+          >
             About Us
-          </Button>
+          </button>
         </div>
       </div>
     </section>

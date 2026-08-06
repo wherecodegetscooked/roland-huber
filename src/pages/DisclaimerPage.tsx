@@ -4,10 +4,15 @@ import { siteConfig } from '../constants';
 // Disclaimer / Impressum.
 export const DisclaimerPage: React.FC = () => {
   return (
-    <section className="pt-32 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-4xl sm:text-5xl font-bold text-zinc-900 mb-12">Disclaimer</h1>
+    <>
+      <section className="bg-[#080808] pt-36 pb-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white">Disclaimer</h1>
+        </div>
+      </section>
 
+      <section className="py-20">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="space-y-10 text-zinc-700 leading-relaxed">
           <div>
             <h2 className="text-xl font-bold text-zinc-900 mb-3">Contact address</h2>
@@ -78,6 +83,7 @@ export const DisclaimerPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };

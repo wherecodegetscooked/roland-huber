@@ -64,24 +64,24 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Leistungen */}
-      <section className="pb-24">
-        <div className="max-w-5xl mx-auto px-6 space-y-16">
+      {/* Leistungen: grosse, imposante Bilder im Wechsel mit Text */}
+      <section className="pb-28">
+        <div className="max-w-6xl mx-auto px-6 space-y-24">
           {services.map((service, i) => (
             <div
               key={service.title}
-              className="grid md:grid-cols-2 gap-8 items-center"
+              className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center"
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className={`w-full h-64 md:h-72 object-cover rounded-lg shadow-md ${i % 2 === 1 ? 'md:order-2' : ''}`}
+                className={`w-full h-80 md:h-[32rem] object-cover rounded-xl shadow-2xl md:col-span-7 ${i % 2 === 1 ? 'md:order-2' : ''}`}
               />
-              <div className={i % 2 === 1 ? 'md:order-1' : ''}>
-                <h2 className="text-2xl font-bold text-zinc-900 mb-4">
+              <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+                <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-5">
                   {service.title}
                 </h2>
-                <p className="text-zinc-700 leading-relaxed">
+                <p className="text-lg text-zinc-700 leading-relaxed">
                   {service.text}
                 </p>
               </div>
