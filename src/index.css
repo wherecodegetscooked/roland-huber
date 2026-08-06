@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Basis etwas groesser -> alle rem-basierten Groessen skalieren mit. */
+  html {
+    font-size: 17.5px;
+  }
+
+  body {
+    background-color: #fafafa;
+    color: #18181b;
+    font-family: 'Lora', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
