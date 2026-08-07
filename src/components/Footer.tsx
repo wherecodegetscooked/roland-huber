@@ -1,7 +1,7 @@
 import React from 'react';
-import { Logo } from './Logo';
 import type { Page } from '../types';
 import { siteConfig } from '../constants';
+import rkhcFull from '../assets/images/rkhc_full.png';
 
 interface FooterProps {
   navigateTo: (page: Page) => void;
@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
           <button className="cursor-pointer" onClick={() => navigateTo('home')} aria-label="Home">
-            <Logo size="sm" />
+            <img src={rkhcFull} alt={siteConfig.legalName} className="h-20 w-auto" />
           </button>
           <p className="text-xs text-gray-400 text-center md:text-left">
             {siteConfig.address.company} &middot; {siteConfig.address.street} &middot;{' '}

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Logo } from './Logo';
 import { Menu, X } from 'lucide-react';
 import type { Page } from '../types';
+import { siteConfig } from '../constants';
+import rkhcLogoLong from '../assets/images/rkhc_logo_long.png';
+import rkhcFavicon from '../assets/images/rkhc_favicon.png';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -43,7 +45,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled, currentPage, navigateT
             onClick={() => handleNavClick('home')}
             aria-label="Home"
           >
-            <Logo size="md" />
+            <img src={rkhcFavicon} alt="" aria-hidden="true" className="h-9 sm:h-10 w-auto" />
+            <img src={rkhcLogoLong} alt={siteConfig.legalName} className="h-8 sm:h-9 w-auto" />
           </button>
 
           <div className="hidden md:flex items-center gap-8 text-base text-white/85 font-medium">
