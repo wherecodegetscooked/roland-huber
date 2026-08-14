@@ -11,7 +11,7 @@ export const siteConfig = {
   domain: 'rkhconsulting.ch',
   url: 'https://rkhconsulting.ch',
 
-  email: 'info@rkhconsulting.ch',
+  email: 'roland.huber@rkhconsulting.ch',
   phone: '',
   phoneHref: '',
 

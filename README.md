@@ -61,7 +61,7 @@ Domain `rkhconsulting.ch` nach dem Transfer zu Cloudflare in `wrangler.toml`
 ## Kontaktformular (Worker + Resend)
 
 Das Formular postet an `POST /api/contact` im `worker.js` und verschickt die
-Anfrage per [Resend](https://resend.com) an `info@rkhconsulting.ch`.
+Anfrage per [Resend](https://resend.com) an `roland.huber@rkhconsulting.ch`.
 
 Einrichtung:
 

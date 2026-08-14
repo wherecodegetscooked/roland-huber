@@ -6,7 +6,7 @@
 // Benoetigtes Secret (nicht in Git!):
 //   wrangler secret put RESEND_API_KEY
 
-const CONTACT_TO = "info@rkhconsulting.ch";
+const CONTACT_TO = "roland.huber@rkhconsulting.ch";
 // Absender muss eine in Resend verifizierte Domain sein.
 const CONTACT_FROM = "RKH Consulting <noreply@rkhconsulting.ch>";
 
