@@ -18,9 +18,9 @@ export const siteConfig = {
   address: {
     name: '',
     company: 'RKH Consulting GmbH',
-    street: 'Seestrasse 2',
-    zip: '8800',
-    city: 'Thalwil',
+    street: 'Tägerhardmatte 6',
+    zip: '5430',
+    city: 'Wettingen',
     country: 'Switzerland',
   },
 } as const;

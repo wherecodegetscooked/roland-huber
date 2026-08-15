@@ -25,9 +25,9 @@ export const PrivacyPage: React.FC = () => {
             <address className="not-italic mt-3">
               RKH Consulting GmbH
               <br />
-              Seestrasse 2
+              Tägerhardmatte 6
               <br />
-              8800 Thalwil
+              5430 Wettingen
             </address>
             <p className="mt-3">
               E-Mail:{' '}

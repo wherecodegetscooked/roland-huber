@@ -19,9 +19,9 @@ export const DisclaimerPage: React.FC = () => {
             <address className="not-italic">
               RKH Consulting Ltd.
               <br />
-              Seestrasse 2
+              Tägerhardmatte 6
               <br />
-              8800 Thalwil
+              5430 Wettingen
               <br />
               Switzerland
             </address>
