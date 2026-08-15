@@ -46,6 +46,11 @@ export const AboutPage: React.FC = () => {
             technology firms in Africa, Middle East and Europe.
           </p>
           <p>
+            In the same time RKHC is specializing in sourcing innovative Chinese products,
+            technologies, services and solutions for customers across Africa, the Middle East
+            and Europe.
+          </p>
+          <p>
             The company was founded by Dr. Roland K. Huber, CEO. The senior management is
             additionally comprised of Jinming Wang, head China, and Raymond J. Lacoste,
             head Europe, Middle East and Africa. A key component of the strategy is RKHC&rsquo;s
